@@ -1,8 +1,8 @@
 "use client";
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import Footer from '@/components/Footer';
-import Eventcard from '@/components/eventcard';
+import Footer from '@/app/components/Footer';
+import Eventcard from '@/app/components/eventcard';
 
 export default function AllEventsPage() {
   // State for search and filtering

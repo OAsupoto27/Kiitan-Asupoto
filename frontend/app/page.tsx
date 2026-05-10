@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useState, useMemo } from 'react';
-import Footer from '@/components/Footer';
-import Eventcard from '@/components/eventcard';
+import Footer from '@/app/components/Footer';
+import Eventcard from '@/app/components/eventcard';
 import Link from 'next/link';
 
 interface Event {
