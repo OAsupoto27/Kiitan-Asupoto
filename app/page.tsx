@@ -113,7 +113,7 @@ export default function Home() {
               </div>
 
               <input 
-                className="w-full bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white placeholder:text-slate-400 py-3 px-2 outline-none" 
+                className="w-full bg-transparent border-none focus:ring-0 text-slate-900  placeholder:text-slate-400 py-3 px-2 outline-none" 
                 placeholder="Search for events..." 
                 type="text"
                 value={searchQuery}

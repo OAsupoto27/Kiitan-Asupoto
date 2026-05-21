@@ -140,50 +140,63 @@ export default function AllEventsPage() {
       <main className="pt-32 pb-20 bg-white flex-1">
         <section className="px-6 max-w-7xl mx-auto">
           <div className="flex flex-col items-center mb-16">
-            {/* 119 | Interactive Search Bar */}
-            <div className="relative w-full max-w-2xl">
-              <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+            {/* Original Home Page Search Bar */}
+          <div className="relative w-full max-w-2xl mx-auto mb-12">
+            <div className="relative flex items-center bg-white rounded-full p-2 shadow-xl border border-slate-100">
+              
+              {/* MAGNIFYING GLASS ICON */}
+              <div className="pl-4 pr-1 flex items-center justify-center pointer-events-none">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
                   fill="none" 
                   viewBox="0 0 24 24" 
                   strokeWidth={2} 
                   stroke="currentColor" 
-                  className="w-6 h-6 text-slate-400"
+                  className="w-5 h-5 text-slate-400"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 </svg>
               </div>
 
-              <input
+              <input 
+                className="w-full bg-transparent border-none focus:ring-0 text-slate-900 placeholder:text-slate-400 py-3 px-2 outline-none" 
+                placeholder="Search for events..." 
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search by title, organizer, or location..."
-                className="w-full bg-slate-50 text-slate-900 pl-16 pr-32 py-5 rounded-full text-sm focus:outline-none border border-slate-100 focus:border-[#3525cd]/50 focus:bg-white transition-all placeholder:text-slate-400"
-              />
-              
-              <button className="absolute right-2 top-2 bottom-2 bg-[#3525cd] text-white px-8 rounded-full text-sm font-bold hover:bg-[#4d44e3] transition-colors shadow-lg shadow-indigo-500/20">
+              /> 
+
+              {searchQuery && (
+                <button
+                  className="mr-2 px-2 text-slate-400 hover:text-slate-600 transition-colors"
+                  onClick={() => setSearchQuery('')}
+                >
+                  <span className="material-symbols-outlined text-sm">close</span>
+                </button>
+              )}
+
+              <button className="bg-[#3525cd] text-white px-8 py-3 rounded-full font-bold hover:opacity-90 transition-all">
                 Search
               </button>
             </div>
+          </div>
 
-            {/* 148 | Responsive Category Filters - Only one map block here */}
-            <div className="flex flex-wrap justify-center gap-2 mt-8 sm:gap-3">
-              {categories.map((cat) => (
-                <button 
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-5 py-2 rounded-full text-xs font-bold transition-all border ${
-                    activeCategory === cat 
-                    ? "bg-[#3525cd] text-white border-[#3525cd] shadow-md shadow-indigo-500/20" 
-                    : "bg-white text-slate-500 border-slate-100 hover:border-slate-300 hover:text-slate-700"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
+          {/* Original Home Page Category Filters */}
+          <div className="flex justify-center gap-3 overflow-x-auto no-scrollbar mb-16">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-6 py-2 rounded-full font-medium transition-all whitespace-nowrap ${
+                  activeCategory === category
+                    ? 'bg-[#3525cd] text-white shadow-md'
+                    : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-100'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
           </div>
 
           {/* Results Header */}
