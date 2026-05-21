@@ -37,7 +37,7 @@ http://localhost:3000
 - Asuputo Kitan – Backend
 - Member 6 – Frontend
 - Nnodim Chukwuka – QA/Documentation
-- Ogunmoye Oluwatamilore – QA/Documentation
+- Ogunmoye Oluwatamilore  – QA/Documentation
 
 ## QA Responsibilities
 - Tested application features
