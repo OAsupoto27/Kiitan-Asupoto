@@ -77,10 +77,8 @@ export default function Home() {
             <span className="text-2xl font-extrabold text-[#3525cd] tracking-tighter">Pulse</span>
           </div>
           <div className="flex items-center gap-4">
-            <button className="text-slate-600 font-semibold hover:text-[#4d44e3] transition-colors">Login</button>
-            <Link href="/signup" className="bg-[#3525cd] text-white px-5 py-2 rounded-xl font-semibold shadow-lg shadow-[#3525cd]/30 hover:bg-[#4d44e3] transition-colors">
-  Sign Up
-</Link>
+            <Link href="/login" className="text-slate-600 font-semibold hover:text-[#4d44e3] transition-colors">Login</Link>
+            <Link href="/signup" className="bg-[#3525cd] text-white px-5 py-2 rounded-xl font-semibold shadow-lg shadow-[#3525cd]/30 hover:bg-[#4d44e3] transition-colors">Sign Up</Link>
           </div>
         </nav>
       </header>
